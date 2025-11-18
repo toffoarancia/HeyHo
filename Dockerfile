@@ -74,6 +74,6 @@ COPY --from=builder /build/packages/frontend/node_modules ./packages/frontend/no
 HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
   CMD curl -fsS http://localhost:${PORT:-3000}/api/v1/status || exit 1
 
-EXPOSE ${PORT:-3000}
+EXPOSE ${PORT:-8080}
 
 ENTRYPOINT ["pnpm", "run", "start"]
